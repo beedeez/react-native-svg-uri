@@ -208,6 +208,8 @@ class SvgUri extends Component{
         let doc = new xmldom.DOMParser().parseFromString(inputSVG);
 
         let rootSVG = this.inspectNode(doc.childNodes[0]);
+				
+				rootSVG = React.cloneElement(rootSVG, { style: this.props.svgStyle })
 
         return(
             <View style={this.props.style}>
